@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-[#f8f9fa] text-gray-900;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(200, 200, 200, 0.3), transparent 50%),
+      radial-gradient(circle at 85% 30%, rgba(220, 220, 220, 0.3), transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-xl border border-black/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] transition-all duration-300;
+  }
+
+  .glass-button-primary {
+    @apply bg-black text-white font-semibold shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:bg-gray-800 transition-all duration-300;
+  }
+
+  .glass-button-secondary {
+    @apply bg-black/5 text-black border border-black/10 hover:bg-black/10 transition-all duration-300;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 border border-black/10 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black/30 focus:bg-white/80 transition-all duration-300;
+  }
+}
